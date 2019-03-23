@@ -1,0 +1,67 @@
+{% load static %}
+<html>
+<head>
+	<title>MessageQ</title>
+     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+
+<body id="bg">
+ <div id="background-carousel">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="item active" style="background-image:url({% static 'images/background1.png' %})"></div>
+        <div class="item" style="background-image:url(http://placehold.it/1600x800/)"></div>
+        <div class="item" style="background-image:url(http://placehold.it/1600x800/)"></div>
+      </div>
+    </div>
+</div>
+
+ <div id="content-wrapper">
+    <header class="headdesk">
+	 <b>MessageQ</b>
+    </header>
+
+    <div id="mySidenav" class="sidenav">
+      <a href="#" id="account">Account</a>
+      <a href="#" id="settings">Settings</a>
+      <a href="#" id="about">About</a>
+      <a href="#" id="contact">Contact</a>
+    </div>
+
+    <form id="btn_form" method="post">
+        {% csrf_token %}
+    <div id= btn1>
+
+    	<button id="mailbtn">
+
+    	</button>
+    	<div class="overlay">Mail Marketing</div>
+    </div>
+
+    <div id="btn2">
+    	<button id="smsbtn"></button>
+    	<div class="overlay">SMS Marketing</div>
+    </div>
+
+    <div id="btn3">
+    	<button id="chatbot"></button>
+    	<div class="overlay">Chatbot</div>
+    </div>
+    </form>
+
+    <footer>
+        {% if user.is_authenticated %}
+        <p>Welcome {{ user.username }} !!!</p>
+        <input type="submit" id="logout" onclick="document.location.href = '{% url 'AuthService:logout' %}'"  value="Logout">
+        {% else %}
+        <p>You are not logged in</p>
+        <a href="{% url 'AuthService:login' %}">login</a>
+    {% endif %}
+
+    </footer>
+</div>
+</body>
+</html>

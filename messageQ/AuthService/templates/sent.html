@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sent Mail</title>
+</head>
+<body>
+<h1>Hi there</h1>
+<ul>
+    {% for mail in mails %}
+    <li>{{ mail.subject }}</li>
+    <li>{{ mail.message }}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
