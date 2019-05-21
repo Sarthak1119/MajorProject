@@ -12,7 +12,7 @@ class SmsSend(APIView):
 
     def post(self, request):
         message = request.data.get('message')
-        if api.send_sms(body=message, from_phone='+7014784612', to=['+8823962379']):
+        if api.send_sms(body=message, from_phone='+XXXXXXXXXXXXX', to=['+XXXXXXXXXXXXXXXXX']):
             messages.success(request,"SMS sent successfully")
         else:
             messages.error(request, "Not sent successfully!!! ")
