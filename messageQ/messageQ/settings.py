@@ -82,9 +82,9 @@ WSGI_APPLICATION = 'messageQ.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'messageq',
+        'NAME': 'XXXXXXX',
         'USER':'postgres',
-        'PASSWORD':'sarthak1119',
+        'PASSWORD':'XXXXXXXXXXXXXXX',
         'HOST':'localhost',
         'PORT':'',
     }
@@ -137,8 +137,8 @@ LOGOUT_REDIRECT_URL = 'AuthService:home'
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.mailgun.org'
-EMAIL_HOST_PASSWORD = 'sarthak1119' #mailgun password
-EMAIL_HOST_USER = 'sarthak@sandbox166e61d56edd4ed9b416bd29927d6b5a.mailgun.org' #my mailgun username
+EMAIL_HOST_PASSWORD = 'XXXXXXXXXXXXXXXXXXX' #mailgun password
+EMAIL_HOST_USER = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXX' #my mailgun username
 EMAIL_PORT = 587
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
