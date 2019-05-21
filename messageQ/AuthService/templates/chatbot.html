@@ -1,0 +1,118 @@
+{% load static %}
+<html lang="en">
+<head>
+	<title>ChatBot</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<!-- <link rel="icon" type="image/png" href="images/icons/favicon.ico"/> -->
+<!--===============================================================================================-->
+	<!-- <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css"> -->
+<!--===============================================================================================-->
+	<!-- <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"> -->
+<!--===============================================================================================-->
+	<!-- <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css"> -->
+<!--===============================================================================================-->
+	<!-- <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css"> -->
+<!--===============================================================================================-->
+	<!-- <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css"> -->
+<!--===============================================================================================-->
+	<!-- <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css"> -->
+<!--===============================================================================================-->
+    <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/chatmain.css' %}">
+    <link href="{% static 'css/lib/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static '/css/lib/themify-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'css/lib/menubar/sidebar.css' %}" rel="stylesheet">
+    <link href="{% static 'css/lib/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/lib/helper.css' %}" rel="stylesheet">
+    <link href="{% static 'css/composed.css' %}" rel="stylesheet">
+<!--===============================================================================================-->
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="{% url 'AuthService:home' %}">MessageQ</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="{% url 'AuthService:logout' %}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+<div id="messagesuccess" align="center">
+    {% for message in messages %}
+
+                             <div class="alert alert-success">
+                                 <b>{{ message }}</b>
+                             </div>
+               {% endfor %}
+</div>
+
+
+	<div class="container-contact100" style="background-image: url('{% static 'images/bg-01.jpg' %}');">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" method="post">
+				{% csrf_token %}
+				<span class="contact100-form-title">
+					<b>Company Details</b>
+				</span>
+
+				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Name is required">
+					<span class="label-input100"><b>Company name *</b></span>
+					<input class="input100" type="text" name="name" placeholder="Enter your name">
+				</div>
+
+				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate = "Valid number is required:">
+					<span class="label-input100"><b>Contact Details *</b></span>
+					<input class="input100" type="number" name="contact" placeholder="Enter your number">
+				</div>
+
+				<div class="wrap-input100">
+					<span class="label-input100"><b>Your Website *</b></span>
+					<input class="input100" type="text" name="web" placeholder="http://">
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "Message is required">
+					<span class="label-input100"><b>About Your Company *</b></span>
+					<textarea class="input100" name="about" placeholder="Give Brief Description....."></textarea>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate = "Message is required">
+					<span class="label-input100"><b>What type of services you provide *</b></span>
+					<textarea class="input100" name="service" placeholder="Give Brief Description....."></textarea>
+				</div>
+
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn">
+							Submit
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+	</div>
+
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<!-- <script src="vendor/jquery/jquery-3.2.1.min.js"></script> -->
+<!--===============================================================================================-->
+	<!-- <script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+===============================================================================================
+	<script src="vendor/select2/select2.min.js"></script> -->
+<!--===============================================================================================-->
+	<script src="{% static 'js/chatmain.js' %}"></script>
+<script src="js/sendscript.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+</body>
+</html>

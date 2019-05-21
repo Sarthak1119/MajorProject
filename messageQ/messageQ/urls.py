@@ -21,6 +21,9 @@ from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('auth/',include(('AuthService.urls'), namespace='AuthService')),
-    path('mail/',include(('MailService.urls'), namespace='MailService')),
+    url(r'^',include(('AuthService.urls'), namespace='AuthService')),
+    url(r'^mail/',include(('MailService.urls'), namespace='MailService')),
+    url(r'^chat/',include(("ChatService.urls"), namespace="ChatService")),
+    url(r'^sms/', include(("SmsService.urls"),namespace="SmsService")),
+
 ]

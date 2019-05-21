@@ -47,7 +47,7 @@ class Loginview(APIView):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return render(request, 'home.html')
+            return render(request, 'index.html')
         else:
 
             messages.error(request, 'username or password not correct')
@@ -58,9 +58,9 @@ class HomeView(APIView):
 
     def get(self,request):
         if request.user.is_authenticated:
-            return render(request,'home.html')
-        else:
             return render(request,'index.html')
+        else:
+            return render(request,'Mainpage.html')
 
 
 

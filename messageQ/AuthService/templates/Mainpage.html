@@ -1,0 +1,151 @@
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MessageQ</title>
+  <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
+  <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300|Raleway:300,400,900,700italic,700,300,600">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/jquery.bxslider.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+  <div class="loader"></div>
+  <div id="myDiv">
+    <!--HEADER-->
+    <div class="header">
+      <div class="bg-color">
+        <header id="main-header">
+          <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+                <a class="navbar-brand" href="#">Message<span class="logo-dec">Q</span></a>
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                  <li class="active"><a href="#main-header">Home</a></li>
+                  <li class=""><a href="#feature">About</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </header>
+        <div class="wrapper">
+          <div class="container">
+            <div class="row">
+              <div class="banner-info text-center wow fadeIn delay-05s">
+                <h1 class="bnr-title">You are at Message<span>Q</span></h1>
+                <h2 class="bnr-sub-title">Starting a new journey with Us!!</h2>
+                <p class="bnr-para">We are at the MessageQ provide the solution to your Bussiness.Bring your bussiness at the success level with us.</p>
+                <div class="brn-btn">
+                  <a href="{% url 'AuthService:login' %}" class="btn btn-download">Login</a>
+                  <a href="{% url 'AuthService:create_account' %}" class="btn btn-more">Registration</a>
+                </div>
+                <div class="overlay-detail">
+                  <a href="#feature"><i class="fa fa-angle-down"></i></a>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ HEADER-->
+    <!---->
+    <section id="feature" class="section-padding wow fadeIn delay-05s">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="wrap-item text-center">
+              <div class="item-img">
+                <img src="{% static 'images/ser01.png' %}">
+              </div>
+              <h3 class="pad-bt15">Messages</h3>
+              <p>Best way to provide information on instant way on your clients mobile devices.Great feature on your fingure tips</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="wrap-item text-center">
+              <div class="item-img">
+                <img src="{% static 'images/ser02.png' %}">
+              </div>
+              <h3 class="pad-bt15">E-Mails</h3>
+              <p>You are able to send email in bulk on your client desktop as well as on their mobile devices.</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="wrap-item text-center">
+              <div class="item-img">
+                <img src="{% static 'images/ser03.png' %}">
+              </div>
+              <h3 class="pad-bt15">Your Assitant</h3>
+              <p>Your personal assistant give you the best answers to your queries and problem related to information to give to your client </p>
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+    </section>
+    <!---->
+    <!---->
+    <section id="service1" class="section-padding wow fadeInUp delay-05s">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2 class="service1-title pad-bt15">What We Do?</h2>
+            <p class="sub-title pad-bt15">We provide marketing services for the companies to enhance or build their buisness in today' competitive enviroment.</p>
+            <hr class="bottom-line">
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="service1-item">
+              <h3><span>M</span>essages</h3>
+              <p>A message is a discrete unit of communication intended by the source for consumption by some recipient or group of recipients. A message may be delivered by various means, including courier, telegraphy, carrier pigeon and electronic bus. A message can be the content of a broadcast.</p>
+              <a href="">learn more...</a>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="service1-item">
+              <h3><span>E</span>Mails</h3>
+              <p>Electronic mail is a method of exchanging messages between people using electronic devices. Invented by Ray Tomlinson, email first entered limited use in the form now recognized as email. Email operates across computer networks, which today is primarily the Internet.</p>
+              <a href="">learn more...</a>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="service1-item">
+              <h3><span>C</span>hat bot</h3>
+              <p>A chatbot is a computer program or an artificial intelligence which conducts a conversation via auditory or textual methods.</p>
+              <a href="">learn more...</a>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+          </div>
+        </div>
+      </div>
+    </section>
+    <!---->
+  </div>
+  </div>
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/wow.js' %}"></script>
+  <script src="{% static 'js/jquery.bxslider.min.js' %}"></script>
+  <script src="{% static 'js/custom.js' %}"></script>
+  <script src="{% static 'contactform/contactform.js'"></script>
+
+</body>
+</html>

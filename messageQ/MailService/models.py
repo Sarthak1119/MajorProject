@@ -13,3 +13,12 @@ class SentMail(models.Model):
     def __str__(self):
         return "{}".format(self.user)
 
+class InboxMail(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    from_user = models.CharField(max_length=100)
+    rec_subject = models.CharField(max_length=500)
+    message_rec = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return "{}".format(self.user)
+

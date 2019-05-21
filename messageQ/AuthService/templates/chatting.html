@@ -1,0 +1,70 @@
+{% load static %}
+
+<html>
+
+<head>
+    <div><title>Chat Panel</title></div>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/chat.css' %}">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/chat.js' %}"></script>
+
+</head>
+
+<body>
+    <div id="chat-body" class="panel panel-default">
+        <div class="panel-heading" align="center">Chimpi !!</div>
+        <div id="msg-list-div" class="panel-body">
+            <ul id="msg-list" class="list-group">
+                {% for obj in chat %}
+                        {%if obj.user_check == "B"%}
+                         <li class="text-left list-group-item">{{ obj.message }}</li>
+                        {%elif obj.user_check == "G" and obj.user_check != "B"%}
+                        <li class="text-right list-group-item">{{ obj.message }}</li>
+                            {%else%}
+                        <li class="text-left list-group-item">{{ obj.message }}</li>
+                        {%endif%}
+                        {% empty %}
+                        <li class="text-left list-group-item">Hi Chimpi here, How can I help you!</li>
+                {% endfor %}
+
+
+                <script>
+                    var chatlist = document.getElementById('msg-list-div');
+                    chatlist.scrollTop = chatlist.scrollHeight;
+                </script>
+            </ul>
+
+            <div align="centre">
+                {% for message in messages %}
+
+                             <div class="alert alert-success" align="center">
+                                 <b>{{ message }}</b>
+                             </div>
+               {% endfor %}
+            </div>
+            <footer><h5>Please type "bye" to exit from chatbot</h5></footer>
+
+        </div>
+    </div>
+
+    <form id="chat-form" method="post">
+        {% csrf_token %}
+        <div id="chat-bottom" class="input-group">
+            <input type="text" id="chat-msg" name="chat-msg" class="form-control"/>
+            <span class="input-group-btn">
+            <div>
+                <input class="btn btn-primary" id="send" type="submit" value="Send" onclick="msg()"/>
+            </div>
+            </span>
+        </div>
+    </form>
+
+</body>
+</html>

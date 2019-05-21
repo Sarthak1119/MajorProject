@@ -1,0 +1,192 @@
+{% load static %}
+<html lang="en">
+<head>
+  <title>MessageQ</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'css/composed.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.body.style.backgroundColor = "white";
+}
+</script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  resize: vertical;
+}
+    
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+
+
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+    color: red;
+  display: table;
+  clear: both;
+}
+
+
+</style>
+
+    <style>
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px 10px;
+  cursor: pointer;
+    margin-left: 800px;
+    
+}
+
+        
+.button2 {
+      border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px 10px;
+  cursor: pointer;
+  cursor: pointer;
+     background-color: #008CBA;
+    margin-left: 750px;
+} /* Blue */
+        
+        
+.button3 {
+      border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px 10px;
+  cursor: pointer;
+    background-color: #f44336;
+        margin-left: 10px;} /* Red */ 
+</style>
+    
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="{% url 'AuthService:home' %}">MessageQ</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+    <div id="mySidenav" class="sidenav"> 
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="text-center">
+      {% if user.is_authenticated %}
+				<div class="author-img" style="background-image: url(images/about.jpg);"></div>
+				<h1 id="colorlib-logo"><a href="index.html">{{ user.first_name }}</a></h1>
+				<h3><span class="position">{{ user.email }}</span></h3>
+      {% endif %}
+        </div>
+</div>
+    
+<div id="main">
+  <span style="font-size:30px; cursor:pointer" onclick="openNav()">&#9776;</span>
+</div>
+     <h1 class="head">Composed</h1>
+
+    <div class="container ct">
+  </div>
+
+  <script src="{% static 'easy_background.js' %}"></script>
+<style>
+    body {
+        background-image: url({% static 'images/bgcomposed.jpg' %});
+    }
+    </style>
+ <div class="container">
+     <div id="messagesuccess" align="center">
+     {% for message in messages %}
+
+                             <div class="alert alert-success">
+                                 <b>{{ message }}</b>
+                             </div>
+               {% endfor %}
+     </div>
+  <form method="post">
+      {% csrf_token %}
+    <div class="row">
+      <div class="col-25">
+          <div class="emailtext">
+        <label>E-mail</label>
+              </div>
+      </div>
+      <div class="col-75">
+          <input type="text" name="subject" placeholder="Enter Subject" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+          <div class="messagetext">
+        <label for="message">Message</label>
+              </div>
+      </div>
+      <div class="col-75">
+        <textarea id="message" name="message" placeholder="Write something.." style="height:200px" required></textarea>
+      </div>
+    </div>
+     <button type = "submit" class="button" value="submit">Send</button>
+  </form>
+     <a href= "{% url 'MailService:inbox' %}"><button class="button2">Inbox</button></a>
+     <a href= "{% url 'MailService:sent' %}"><button class="button3">Sent</button></a>
+</div>
+
+
+</body>
+</html>
